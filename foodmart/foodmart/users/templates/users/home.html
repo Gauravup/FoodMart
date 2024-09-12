@@ -1,0 +1,240 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopery - Organic Food Mart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    .navbar-brand img {
+        width: 150px;
+    }
+    
+    .navbar-search input {
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+    }
+    
+    .navbar-search .search-btn {
+        padding: 8px 16px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .navbar-links a {
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .navbar-icons a {
+        color: white;
+        width: 24px;
+        margin-left: 10px;
+    }
+    .navbar-icons a:hover{
+        scale: 5;
+    }
+    
+    /* Container Styles */
+    .container {
+        display: flex;
+        padding: 20px;
+    }
+    
+    /* Sidebar Styles */
+    .sidebar {
+        width: 20%;
+        background-color: #f5f5f5;
+        padding: 20px;
+    }
+    
+    .sidebar ul {
+        list-style: none;
+    }
+    
+    .sidebar ul li {
+        padding: 10px;
+    }
+    
+    .sidebar ul li a {
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .sidebar ul li a:hover {
+        color: #28a745;
+    }
+    
+    /* Main Content Styles */
+    .main-content {
+        width: 80%;
+        padding: 0 20px;
+    }
+    
+    .banner {
+        position: relative;
+    }
+    
+    .banner img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    .banner-text {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        color: white;
+    }
+    
+    .banner-text h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+    
+    .banner-text p {
+        font-size: 1.2em;
+    }
+    
+    .banner-text .btn {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    .features {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .feature-item {
+        text-align: center;
+    }
+    
+    .feature-item img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="/static/images/shopery-logo.svg" alt="Shopery Logo" class="logo" style="background-color: white; border-radius: 5px;">
+        </div>
+        <div class="navbar-search">
+            <input type="text" placeholder="Search">
+            <button class="search-btn">Search</button>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Pages</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="navbar-icons" style="color: white;">
+            <a href=""><i class="fa-regular fa-heart"></i></a>
+            <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+
+        </div>
+    </nav>
+
+    <!-- Sidebar and Main Content -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Fresh Fruit</a></li>
+                <li><a href="#">Vegetables</a></li>
+                <li><a href="#">River Fish</a></li>
+                <li><a href="#">Chicken & Meat</a></li>
+                <li><a href="#">Drink & Water</a></li>
+                <li><a href="#">Yogurt & Ice Cream</a></li>
+                <li><a href="#">Cake & Bread</a></li>
+                <li><a href="#">Butter & Cream</a></li>
+                <li><a href="#">Cooking</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Section -->
+        <div class="main-content">
+            <div class="banner">
+                <img src="/static/images/freshfood.jpg" alt="Fresh and Healthy Organic Food">
+                <div class="banner-text">
+                    <h1>Fresh & Healthy Organic Food</h1>
+                    <p>Sale up to 48% Off</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <img src="/static/images/free-Shipping-imag.png" alt="Free Shipping">
+                    <p>Free Shipping</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/static/images/logo-payments.avif" alt="100% Secure Payment">
+                    <p>100% Secure Payment</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/static/images/guarantee.webp" alt="Money-Back Guarantee">
+                    <p>Money-Back Guarantee</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shopery. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
